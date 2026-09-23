@@ -584,21 +584,70 @@
     
 // };
 
-let arr= [4,9,1,0,2,3]
+// let arr= [4,9,1,0,2,3]
 
-function linearSearch(arr,target){
-    for(let i=0; i<arr.length;i++){
-        if(arr[i] === target){
-            return i
-        }
+// function linearSearch(arr,target){
+//     for(let i=0; i<arr.length;i++){
+//         if(arr[i] === target){
+//             return i
+//         }
+//     }
+//     return -1;
+// }
+
+
+
+
+// let result = linearSearch(arr , 0)
+// console.log(result)
+
+
+//Binary Search 
+
+// Input: nums = [-1,0,3,5,9,12], target = 9
+// Output: 4
+// Explanation: 9 exists in nums and its index is 4
+
+
+
+let nums = [-1,0,3,5,9,12]
+
+let target = 9
+
+let left =0 
+
+let right = nums.length-1
+
+let result = -1;
+
+while(right >= left){
+
+
+    let middle = Math.floor(left+right/2)
+
+    if(target == nums[middle]){
+        result = middle;
+        break;
     }
-    return -1;
+
+    else if (target < nums[middle]){
+        right = middle-1
+    }
+    else{
+        left = middle+1
+    }
+
+
 }
 
-
-
-
-let result = linearSearch(arr , 0)
 console.log(result)
+
+
+
+
+
+
+
+
 
 
