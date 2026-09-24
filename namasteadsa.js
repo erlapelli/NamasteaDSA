@@ -610,36 +610,76 @@
 
 
 
-let nums = [-1,0,3,5,9,12]
+// let nums = [-1,0,3,5,9,12]
 
-let target = 9
+// let target = 9
 
-let left =0 
+// let left =0 
 
-let right = nums.length-1
+// let right = nums.length-1
 
-let result = -1;
+// let result = -1;
 
-while(right >= left){
+// while(right >= left){
 
 
-    let middle = Math.floor(left+right/2)
+//     let middle = Math.floor(left+right/2)
 
-    if(target == nums[middle]){
-        result = middle;
-        break;
+//     if(target == nums[middle]){
+//         result = middle;
+//         break;
+//     }
+
+//     else if (target < nums[middle]){
+//         right = middle-1
+//     }
+//     else{
+//         left = middle+1
+//     }
+
+
+// }
+
+// console.log(result)
+
+
+
+//Bubble sort 
+
+let arr = [5,4,1,6,2]
+
+
+function bubblesort(arr){
+    let n = arr.length
+
+    for(let i=0;i<n-1; i++){
+
+        let isswap = false;
+
+
+        for(let j=0;j<n-i-1;j++){
+            if(arr[j]>arr[j+1]){
+
+                let temp = arr[j]
+                arr[j]=arr[j+1]
+                arr[j+1]=temp
+                 isswap = true
+            }
+
+           
+        }
+        if(!isswap)
+            break;
+
+
+
     }
 
-    else if (target < nums[middle]){
-        right = middle-1
-    }
-    else{
-        left = middle+1
-    }
-
-
+    return arr
 }
 
+
+let result = bubblesort(arr)
 console.log(result)
 
 
