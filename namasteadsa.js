@@ -646,42 +646,80 @@
 
 //Bubble sort 
 
-let arr = [5,4,1,6,2]
+// let arr = [5,4,1,6,2]
 
 
-function bubblesort(arr){
-    let n = arr.length
+// function bubblesort(arr){
+//     let n = arr.length
 
-    for(let i=0;i<n-1; i++){
+//     for(let i=0;i<n-1; i++){
 
-        let isswap = false;
+//         let isswap = false;
 
 
-        for(let j=0;j<n-i-1;j++){
-            if(arr[j]>arr[j+1]){
+//         for(let j=0;j<n-i-1;j++){
+//             if(arr[j]>arr[j+1]){
 
-                let temp = arr[j]
-                arr[j]=arr[j+1]
-                arr[j+1]=temp
-                 isswap = true
-            }
+//                 let temp = arr[j]
+//                 arr[j]=arr[j+1]
+//                 arr[j+1]=temp
+//                  isswap = true
+//             }
 
            
-        }
-        if(!isswap)
-            break;
+//         }
+//         if(!isswap)
+//             break;
 
+
+
+//     }
+
+//     return arr
+// }
+
+
+// let result = bubblesort(arr)
+// console.log(result)
+
+
+
+//Selection Sort 
+
+
+let arr = [7,1,5,4,3,2]
+
+function selectionSort(a){
+    let n = a.length
+
+    for(let i=0; i<n; i++){
+        
+        let min =i
+        for(let j=i+1;i<n;j++){
+            if(a[j]<a[min]){
+                min=j
+            }
+        }
+        if(min != i){
+            let temp = a[i]
+            a[i] = a[min]
+            a[min] = temp
+        }
 
 
     }
-
     return arr
+
+
+
 }
 
 
-let result = bubblesort(arr)
-console.log(result)
 
+
+
+let result = selectionSort(arr)
+console.log(result)
 
 
 
