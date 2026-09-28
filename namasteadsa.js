@@ -687,36 +687,65 @@
 //Selection Sort 
 
 
-let arr = [7,1,5,4,3,2]
+// let arr = [7,1,5,4,3,2]
 
-function selectionSort(a){
+// function selectionSort(a){
+//     let n = a.length
+
+//     for(let i=0; i<n-1; i++){
+        
+//         let min =i
+//         for(let j=i+1;j<n;j++){
+//             if(a[j]<a[min]){
+//                 min=j
+//             }
+//         }
+//         if(min != i){
+//             let temp = a[i]
+//             a[i] = a[min]
+//             a[min] = temp
+//         }
+
+
+//     }
+//     return arr
+
+
+
+// }
+
+// let result = selectionSort(arr)
+// console.log(result)
+
+
+//Insertion Sort
+
+
+let arr = [7,1,5,12,-10,0,4,3,2]
+
+
+function insertionsort(a){
+
     let n = a.length
 
-    for(let i=0; i<n-1; i++){
-        
-        let min =i
-        for(let j=i+1;j<n;j++){
-            if(a[j]<a[min]){
-                min=j
-            }
-        }
-        if(min != i){
-            let temp = a[i]
-            a[i] = a[min]
-            a[min] = temp
-        }
+    for(let i=1;i<n;i++){
+        let curr=a[i];
+        let prev = i-1 
 
-
+        while(a[prev] > curr && prev >=0 ){
+            a[prev+1] = a[prev];
+            prev--;
+        }
+        a[prev+1] = curr;
     }
-    return arr
 
-
-
+    return arr;
 }
 
-let result = selectionSort(arr)
-console.log(result)
 
+
+let result = insertionsort(arr)
+console.log(result)
 
 
 
